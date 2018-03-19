@@ -1,0 +1,10 @@
+# Logs
+
+# Dependency directory
+vue-webpack-demo
+vue-webpack-simple-demo
+node_modules
+
+package-lock.json
+
+
