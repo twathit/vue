@@ -1,0 +1,74 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+   <title>Document</title>
+   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.min.js"></script>
+   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+   <script type="text/javascript" src="https://unpkg.com/vue-router@3.0.1/dist/vue-router.js"></script>
+   <style type="text/css">
+    .router-link-active {
+      font-size:20px;
+      color:#f60;
+    }
+   </style>
+   <script type="text/javascript">
+      const Home={
+        template:'<h3>我是主页</h3>'
+      };
+      const News={
+        template:'<h3>我是新闻</h3>'
+      };
+      const User={
+        template:`
+      <div>
+        <div>
+          <h3>我是用户</h3>
+          <ul>
+            <li><router-link to="/user/bob/age/22">bob</router-link></li>
+            <li><router-link to="/user/tom/age/23">tom</router-link></li>
+            <li><router-link to="/user/jack/age/24">jack</router-link></li>
+          </ul>
+        </div>
+        <div>
+          <router-view></router-view>
+        </div>
+      </div>
+      `
+      };
+      const UserDetail={
+        template:'<h3>用户信息{{$route.params}}</h3>'
+      };
+      const routes = [
+        { path: '/home', component: Home },
+        { path: '/news', component: News },
+        { path: '/user', component: User ,children:[
+          {path:':username/age/:age',component:UserDetail}
+          
+        ]},
+        { path: '*', redirect:'/home' }
+      ];
+      const router = new VueRouter({
+        routes
+      });
+      $(function(){
+        new Vue({
+          router,
+          el:'#vm'
+      })
+    });
+   </script>
+</head>
+<body>
+  <div id="vm">
+    <div>
+      <router-link to="/home">主页</router-link>
+      <router-link to="/news">新闻</router-link>
+      <router-link to="/user">用户</router-link>
+    </div>
+    <div>
+      <router-view></router-view>
+    </div>
+  </div>
+</body>
+</html>
