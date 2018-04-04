@@ -18,7 +18,8 @@
 	export default {
 		data(){
 			return {
-				arrList:[]
+				arrList:[],
+				scroll
 			}
 		},
 		components:{
@@ -31,7 +32,7 @@
 			fetchData(){
 				var _this=this;
 				this.$http.get('src/data/index.data').then(function(res){
-					console.log(res);
+					//console.log(res);
 					_this.arrList=res.data;
 				}).catch(function(err){
 					console.log(err);

@@ -18,7 +18,13 @@ require('./assets/css/base.css');
 
 const router=new VueRouter({
 	mode:'history',
-	scrollBehavior: ()=>({y:0}),		// 滚动条滚动的行为，不加这个默认就会记忆原来滚动条的位置
+	scrollBehavior (to,from,savedPosition){
+    if (savedPosition) {
+      return savedPosition
+    }else{
+      return {x:0,y:0}
+    }
+  },		// 滚动条滚动的行为，不加这个默认就会记忆原来滚动条的位置
 	routes
 });
 

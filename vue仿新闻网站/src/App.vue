@@ -25,7 +25,6 @@
         'loading'
       ]),
     mounted(){
-      console.log(this.$route);
       var path=this.$route.path.substring(1);
       this.headerChange(path);
       this.footerChange(path);
