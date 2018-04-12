@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div>
     <Loading v-if="loading"></Loading>
     <NavView v-show="headShow"></NavView>
     <transition name="slide-down">

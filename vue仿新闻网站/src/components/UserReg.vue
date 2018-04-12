@@ -32,7 +32,7 @@
 	.content{max-width:6.4rem; margin:0 auto;}
 	.content .fhbtn{ padding-top:0.27rem;}
 	.content .fhbtn a{ display:block;width:0.23rem;height:0.25rem; background:url(../assets/img/history1.png) no-repeat 0 0; background-size:100%; margin-left:0.3rem;}
-	.content h1{width:2.18rem;height:1.35rem; background:url(../assets/img/logo.png) no-repeat 0 0; background-size:100%; margin:0 auto; margin-top:1.22rem;}
+	.content h1{width:1.18rem;height:1.1rem; background:url(https://vuejs.org/images/logo.png) no-repeat 0 0; background-size:100%; margin:0 auto; margin-top:0rem;}
 	.content .login{width:2.0rem;height:0.38rem; margin:0 auto; margin-top:0.85rem;}
 	.login a{width:0.97rem;height:0.38rem; font-size:0.35rem; line-height:0.38rem; float:left; color:#4c4f50; text-align:center;}
 	.login span{ float:left;height:0.38rem; border-left:1px solid #4c4f50;}
